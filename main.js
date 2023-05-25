@@ -11,14 +11,14 @@ function store(){ //stores items in the localStorage
   window.localStorage.setItem(key,JSON.stringify(car));  
   //converting object to string
 }
-function removeItem(){ //deletes item from localStorage
-  var key = document.getElementById('removeKey').value; //gets key from user
-  localStorage.removeItem(key) //passes key to the removeItem method
-  console.log("remove items");
+function EditItem(){ 
+  var key = document.getElementById('editItem').value; 
+  localStorage.store(key) 
+  window.localStorage.setItem(key,JSON.stringify(car)); 
 }
 
 window.onload =function(){ //ensures the page is loaded before functions are executed.
   document.getElementById("carForm").onsubmit = store
-  document.getElementById("removeButton").onclick = removeItem
+  document.getElementById("EditButton").onclick = EditItem
   
 }
